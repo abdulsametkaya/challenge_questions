@@ -10,7 +10,7 @@ it is a challenge which contains 7 question
 - PostgreSQL
 
 - Hibernate
-- 
+
 - RestApi
 
 
