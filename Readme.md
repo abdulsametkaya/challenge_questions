@@ -5,8 +5,6 @@ it is a challenge which contains 7 question
 
 - Spring Boot (JPA, Web, Devtools, Validation, Security)
 
-- Spring Framework
-
 - PostgreSQL
 
 - Hibernate
