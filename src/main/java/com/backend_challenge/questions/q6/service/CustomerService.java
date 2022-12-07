@@ -96,6 +96,7 @@ public class CustomerService {
         Customer updateUser = customerMapper.customerRequestToCustomer(customerUpdateRequest);
         updateUser.setId(user.getId());
         updateUser.setRoles(user.getRoles());
+        updateUser.setPassword(user.getPassword());
 
         customerRepository.save(updateUser);
     }

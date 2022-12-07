@@ -17,8 +17,9 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 public class RegisterRequest {
 
+    @Size(min = 11, max = 11, message = "Please provide your identityNumber")
     @NotNull(message = "Please provide your identityNumber")
-    private Long identityNumber;
+    private String identityNumber;
 
     @Size(max = 50)
     @NotNull(message = "Please provide your first name")
@@ -33,10 +34,9 @@ public class RegisterRequest {
     @NotNull(message = "Please provide your password")
     private String password;
 
-    @Pattern(regexp = "^((\\(\\d{3}\\))|\\d{3})[- .]?\\d{3}[- .]?\\d{4}$",
-            message = "Please provide valid phone number")
-    @Size(min = 14, max = 14)
-    @NotNull(message = "Please provide your phone number")
+    @NotNull(message="Please provide phone number")
+    @Size(min=12, max=12,message="Phone number '${validatedValue}' must be {max} chars long")
+    @Pattern(regexp = "^\\d{3}-\\d{3}-\\d{4}$",message = "Please provide valid phone number")
     private String phoneNumber;
 
     @NotNull(message = "Please provide your salary")
