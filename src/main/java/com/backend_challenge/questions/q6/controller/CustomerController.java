@@ -69,12 +69,10 @@ public class CustomerController {
 	
 	@PutMapping("update/{id}")
 	@PreAuthorize("hasRole('ADMIN') or hasRole('CUSTOMER')")
-	public ResponseEntity<CAResponse> updateUser(HttpServletRequest httpServletRequest,
-												 @Valid @RequestBody CustomerUpdateRequest customerUpdateRequest){
-		Long id=(Long) httpServletRequest.getAttribute("id");
+	public ResponseEntity<CAResponse> updateUser(@Valid @RequestBody CustomerUpdateRequest customerUpdateRequest, @PathVariable Long id){
 		customerService.updateUser(id,customerUpdateRequest);
 
-		CAResponse response=new CAResponse();
+		CAResponse response= new CAResponse();
 		response.setMessage(ResponseMessage.UPDATE_RESPONSE_MESSAGE);
 		response.setSuccess(true);
 		

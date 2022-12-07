@@ -18,10 +18,8 @@ import java.util.Set;
 public class CustomerDTO {
 
     private Long id;
-
     private String fullName;
-
-    private Long identityNumber;
+    private String identityNumber;
     private String email;
 
     private String phoneNumber;
